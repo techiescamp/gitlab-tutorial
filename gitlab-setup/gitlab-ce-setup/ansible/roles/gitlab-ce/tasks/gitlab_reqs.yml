@@ -1,0 +1,14 @@
+---
+- name: Install Gitlab pacakge(s)
+  ansible.builtin.apt:
+    name:
+      - curl
+      - debian-archive-keyring
+      - lsb-release
+      - ca-certificates
+      - apt-transport-https
+      - software-properties-common
+    state: present
+    update_cache: true
+
+
