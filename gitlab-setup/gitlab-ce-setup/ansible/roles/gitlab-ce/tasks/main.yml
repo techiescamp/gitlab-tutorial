@@ -1,0 +1,7 @@
+---
+# tasks file for gitlab ce
+
+- name: Install Gitlab CE on Ubuntu
+  import_tasks: gitlab.yml
+  
+  
