@@ -1,0 +1,22 @@
+---
+- name: Add Gitlab apt key
+  ansible.builtin.apt_key:
+    url: "{{gitlab_ce_apt_key_url}}"
+    state: present
+
+- name: Add Gitlab apt repository
+  ansible.builtin.lineinfile:
+    path: /etc/apt/sources.list.d/gitlab_gitlab-ce.list
+    line: "{{ item }}"
+    create: yes
+  loop:
+    - "deb {{gitlab_ce_apt_repo}}"
+    - "deb-src {{gitlab_ce_apt_repo}}"
+
+- name: Install Gitlab pacakge(s)
+  ansible.builtin.apt:
+    name: "{{gitlab_ce_apt_packages}}"
+    state: present
+    update_cache: true
+
+

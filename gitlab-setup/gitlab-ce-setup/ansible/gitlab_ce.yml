@@ -1,0 +1,8 @@
+---
+- name: Install Jenkins on servers
+  hosts: all
+  become: true
+  remote_user: ubuntu
+
+  roles:
+    - gitlab-ce
