@@ -4,8 +4,5 @@
   become: true
   remote_user: ubuntu
 
-  vars:
-    public_key_path: "/devops-tools/gitlab/id_rsa.pub"
-  
   roles:
     - gitlab-ce
