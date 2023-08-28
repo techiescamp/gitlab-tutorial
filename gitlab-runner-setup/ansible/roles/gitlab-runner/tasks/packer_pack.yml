@@ -1,0 +1,21 @@
+---
+- name: Add HashiCorp GPG key
+  become: yes
+  shell: "curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -"
+
+- name: Add HashiCorp APT repository
+  become: yes
+  shell: "sudo apt-add-repository 'deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main'"
+
+# - name: Update apt cache
+#   become: yes
+#   become_method: sudo
+#   ansible.builtin.apt:
+#     update_cache: yes
+
+- name: Install Terraform
+  ansible.builtin.apt:
+    name: 
+      - packer
+      - terraform
+    state: present

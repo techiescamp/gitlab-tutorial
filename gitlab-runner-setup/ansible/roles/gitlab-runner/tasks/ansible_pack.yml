@@ -1,0 +1,9 @@
+---
+- name: Add Ansible PPA repository
+  apt_repository:
+    repo: ppa:ansible/ansible
+
+- name: Install Ansible
+  ansible.builtin.apt:
+    name: ansible
+    state: latest    

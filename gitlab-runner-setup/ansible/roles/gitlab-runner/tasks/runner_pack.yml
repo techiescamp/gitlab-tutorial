@@ -1,0 +1,19 @@
+---
+- name: Add Gitlab apt key
+  ansible.builtin.apt_key:
+    url: '{{ gitlab_apt_key_url }}'
+    state: present
+
+- name: Add Gitlab apt repository
+  ansible.builtin.apt_repository:
+    repo: '{{ item }}'
+    state: present
+  loop:
+    - 'deb {{ gitlab_apt_repo }}'
+    - 'deb-src {{ gitlab_apt_repo }}'
+
+- name: Install Gitlab runner pacakge(s)
+  ansible.builtin.apt:
+    name: '{{ gitlab_apt_packages }}'
+    state: present
+    update_cache: true
