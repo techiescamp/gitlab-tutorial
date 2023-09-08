@@ -1,0 +1,16 @@
+---
+- name: Download Terraform archive
+  get_url:
+    url: https://releases.hashicorp.com/terraform/1.5.0-rc2/terraform_1.5.0-rc2_linux_amd64.zip
+    dest: /tmp/terraform.zip
+
+- name: Unzip Terraform archive
+  unarchive:
+    src: /tmp/terraform.zip
+    dest: /usr/local/bin
+    remote_src: yes
+
+- name: Set Terraform permissions
+  file:
+    path: /usr/local/bin/terraform
+    mode: "ugo+rx"

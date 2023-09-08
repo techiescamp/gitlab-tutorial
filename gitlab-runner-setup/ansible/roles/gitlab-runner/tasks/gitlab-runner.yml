@@ -1,0 +1,18 @@
+---
+- name: Ensure prerequisites are installed
+  import_tasks: runner-requirements.yml
+
+- name: Install Gitlab Runner
+  import_tasks: runner-install.yml
+
+- name: Install Ansible
+  import_tasks: ansible-install.yml
+
+- name: Install Docker 
+  import_tasks: docker-install.yml
+
+- name: Install Packer 
+  import_tasks: packer-install.yml
+
+- name: Install Terraform
+  import_tasks: terraform-install.yml      
