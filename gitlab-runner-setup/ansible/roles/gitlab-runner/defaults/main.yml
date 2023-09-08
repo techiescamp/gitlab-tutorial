@@ -1,0 +1,5 @@
+---
+# defaults file for gitlab_runner
+gitlab_apt_key_url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
+gitlab_apt_repo: 'https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ {{ ansible_distribution_release }} main'
+gitlab_apt_packages: gitlab-runner
