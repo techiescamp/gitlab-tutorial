@@ -1,0 +1,14 @@
+---
+- name: Add HashiCorp GPG key
+  become: yes
+  shell: "curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -"
+
+- name: Add HashiCorp APT repository
+  become: yes
+  shell: "sudo apt-add-repository 'deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main'"
+
+- name: Install packer
+  ansible.builtin.apt:
+    name: 
+      - packer
+    state: present

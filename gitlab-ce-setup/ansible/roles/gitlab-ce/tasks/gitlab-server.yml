@@ -2,7 +2,7 @@
 # tasks file for gitlab_ce
 
 - name: Install Gitlab CE on Ubuntu
-  import_tasks: gitlab.yml
+  import_tasks: gitlab-install.yml
 
 - name: Install GitLab CE requisites
-  import_tasks: gitlab_reqs.yml          
+  import_tasks: gitlab-requirements.yml          

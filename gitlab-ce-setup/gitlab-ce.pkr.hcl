@@ -24,7 +24,7 @@ build {
   sources = ["source.amazon-ebs.gitlab"]
 
   provisioner "ansible" {
-  playbook_file = "ansible/gitlab_ce.yml"
+  playbook_file = "ansible/gitlab-ce.yml"
   } 
   
   post-processor "manifest" {
